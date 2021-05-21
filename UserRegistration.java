@@ -15,6 +15,16 @@ public class UserRegistration
 		 Matcher m = p.matcher(name);
 		 return m.matches(); 
 	}
+	public static boolean validEmail(String email) {
+		String regexEmail = "^[0-9 A-Z a-z]+(([._+-]*)[0-9A-Za-z]+)*@[0-9 A-Z a-z]+.[a-z]{2,4}([.][a-z]{2,3})*$";
+		Pattern p = Pattern.compile(regexEmail);
+		if (email == null) {
+			return false;
+		}
+		Matcher m = p.matcher(email);
+		return m.matches();
+		
+	}
 	
 	public static void main(String[] args) 
 	{
@@ -22,11 +32,15 @@ public class UserRegistration
 		Scanner input = new Scanner(System.in);
 		System.out.print("Plase enter the your user First Name: ");
 		String userName = input.nextLine();
-			 
-	    System.out.println(validname(userName));
+		System.out.println(validname(userName));
+		
 	    System.out.print("Plase enter the your User Last Name: ");
 		String lastName = input.nextLine();		 
 		System.out.println(validname(lastName));
+		
+		System.out.print("Plase enter the your User Email ID: ");
+	    String emailId = input.nextLine();		 
+		System.out.println(validEmail(emailId));
 		
 	}
 	
