@@ -20,10 +20,13 @@ public class UserRegistration
 	{
 		System.out.println("Welcome to User Registration");
 		Scanner input = new Scanner(System.in);
-		System.out.print("Plase enter the your username: ");
+		System.out.print("Plase enter the your user First Name: ");
 		String userName = input.nextLine();
 			 
-	        System.out.println(validname(userName));
+	    System.out.println(validname(userName));
+	    System.out.print("Plase enter the your User Last Name: ");
+		String lastName = input.nextLine();		 
+		System.out.println(validname(lastName));
 		
 	}
 	
