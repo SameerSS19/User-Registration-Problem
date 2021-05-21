@@ -15,7 +15,7 @@ public class UserRegistration
 		 Matcher m = p.matcher(name);
 		 return m.matches(); 
 	}
-	public static boolean validEmail(String email) {
+	public static boolean email(String email) {
 		String regexEmail = "^[0-9 A-Z a-z]+(([._+-]*)[0-9A-Za-z]+)*@[0-9 A-Z a-z]+.[a-z]{2,4}([.][a-z]{2,3})*$";
 		Pattern p = Pattern.compile(regexEmail);
 		if (email == null) {
@@ -25,6 +25,17 @@ public class UserRegistration
 		return m.matches();
 		
 	}
+	public static boolean MobileNo(String mobileNo) {
+		String regexMobileNo = "^[9][1]\\s[6-9]{1}[0-9]{9}$";
+		Pattern p = Pattern.compile(regexMobileNo);
+		if ( mobileNo == null ){
+			return false;
+		}
+		Matcher m = p.matcher(mobileNo);
+		
+		return m.matches();
+	}
+	
 	
 	public static void main(String[] args) 
 	{
@@ -40,7 +51,11 @@ public class UserRegistration
 		
 		System.out.print("Plase enter the your User Email ID: ");
 	    String emailId = input.nextLine();		 
-		System.out.println(validEmail(emailId));
+		System.out.println(email(emailId));
+		
+		System.out.print("Plase enter the your Mobile Number With country code: ");
+	    String mobileNo = input.nextLine();		 
+		System.out.println(MobileNo(mobileNo));
 		
 	}
 	
