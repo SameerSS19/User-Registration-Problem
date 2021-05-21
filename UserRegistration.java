@@ -35,6 +35,16 @@ public class UserRegistration
 		
 		return m.matches();
 	}
+	public static boolean validPassword(String password) {
+		String regexPassword = "^[a-z A-z]{8,}$";
+		Pattern p = Pattern.compile(regexPassword);
+		if ( password == null ){
+			return false;
+		}
+		Matcher m = p.matcher(password);
+		
+		return m.matches();
+	}
 	
 	
 	public static void main(String[] args) 
@@ -56,6 +66,10 @@ public class UserRegistration
 		System.out.print("Plase enter the your Mobile Number With country code: ");
 	    String mobileNo = input.nextLine();		 
 		System.out.println(MobileNo(mobileNo));
+		
+		System.out.print("Enter the password: ");
+		String userPassword = input.nextLine();
+		System.out.println(validPassword(userPassword));
 		
 	}
 	
