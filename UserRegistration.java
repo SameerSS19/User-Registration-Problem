@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 public class UserRegistration 
 {
+	//Firstname or Lastname
 	@Test
 	public static boolean givenFirstName_LastName_validname(String name) 
 	{
@@ -18,6 +19,7 @@ public class UserRegistration
 		 return m.matches(); 
 	}
 	
+	//Email
 	@Test
 	public static boolean given_email(String email) {
 		String regexEmail = "^[0-9 A-Z a-z]+(([._+-]*)[0-9A-Za-z]+)*@[0-9 A-Z a-z]+.[a-z]{2,4}([.][a-z]{2,3})*$";
@@ -30,6 +32,7 @@ public class UserRegistration
 	
 	}
 	
+	//MobileNo
 	@Test
 	public static boolean given_the_MobileNo(String mobileNo) 
 	{
@@ -44,6 +47,7 @@ public class UserRegistration
 		return m.matches();
 	}
 	
+	//Password
 	@Test
 	public static boolean given_valid_Password(String password) 
 	{
@@ -58,11 +62,12 @@ public class UserRegistration
 		return m.matches();
 	}
 	
-	
 	public static void main(String[] args) 
 	{
 		System.out.println("Welcome to User Registration");
 		Scanner input = new Scanner(System.in);
+		
+		//input 
 		System.out.print("Plase enter the your user First Name: ");
 		String userName = input.nextLine();
 		System.out.println(givenFirstName_LastName_validname(userName));
@@ -82,6 +87,7 @@ public class UserRegistration
 		System.out.print("Please enter the password: ");
 		String userPassword = input.nextLine();
 		System.out.println(given_valid_Password(userPassword));
+		
 	}
 	
 }

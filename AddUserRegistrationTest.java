@@ -4,16 +4,16 @@ import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
-
-class AddUserRegistrationTest {
+class AddUserRegistrationTest 
+{
 
 	@BeforeEach
 	void setUp() throws Exception {
 	}
 
 	@Test
-	void test() {
+	void test() 
+	{
 		
 		Scanner sc = new Scanner(System.in);
 		UserRegistration u = new UserRegistration();
@@ -36,16 +36,17 @@ class AddUserRegistrationTest {
 		boolean email = u.given_email(emailId);
 		Assert.assertEquals(email, true);
 		
+		//Mobile number
+		System.out.println("Plase enter the your Mobile Number With country code:");
+		String mobileNo = sc.next();
+		boolean mobile = u.given_the_MobileNo(mobileNo);
+		Assert.assertEquals(mobile, true);
+				
 		
 		//Password
 		System.out.println("Please enter the password:");
 		String userPassword = sc.next();
 		boolean password = u.given_valid_Password(userPassword);
-		Assert.assertEquals(password, true);
-		
-		
-		
-		
+		Assert.assertEquals(password, true);		
 	}
-
 }
