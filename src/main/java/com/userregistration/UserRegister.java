@@ -14,9 +14,7 @@ public class UserRegister {
         Fname myLamda = (fName) -> {
             //regex Pattern use
             String FnameRegex = "^[A-Z]{1}[a-z A-Z]{2,}$";
-
             Pattern pt = Pattern.compile(FnameRegex);
-
             if (fName.matches(FnameRegex)) {
                 System.out.println("valid name:");
                 return "valid";
@@ -31,16 +29,14 @@ public class UserRegister {
                 }
             }
         };
-
         String result = myLamda.validate_Fname(fname);
+
         //Last Name
         System.out.println("Enter last name:");
         String lastName = sc.next();
 
         Lname lastname = (lName) -> {
-
             String lastName_Regex = "^[A-Z]{1}[a-z A-Z]{2,}$";;
-
             Pattern pt = Pattern.compile(lastName_Regex);
 
             if (lName.matches(lastName_Regex)) {
@@ -60,6 +56,7 @@ public class UserRegister {
             }
         };
         result = lastname.validate_LastName(lastName);
+
         //Email
         System.out.println("Enter your email:");
         String emailid = sc.next();
@@ -87,16 +84,13 @@ public class UserRegister {
             }
         };
         email_id.Validate_emailId(emailid);
+
         //Contact
         System.out.println("Enter contact number:");
         String contactnum = "91 8387478383";
-
         Contact phone = (contact) -> {
-
             String indianContactNum_Regex = "^[9][1]\\s[6-9]{1}[0-9]{9}$";
-
             Pattern pt = Pattern.compile(indianContactNum_Regex);
-
             if (contact.matches(indianContactNum_Regex)) {
 
                 System.out.println("valid:");
@@ -112,12 +106,10 @@ public class UserRegister {
                 }
             }
         };
-
         phone.Validate_phoneNumber(contactnum);
         //Password
         System.out.println("Enter password:");
         String userpassword = sc.next();
-
         Password pass = (password) -> {
             //regex Pattern use
             String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()]).{8,}$";
@@ -139,8 +131,5 @@ public class UserRegister {
             }
         };
         pass.Validate_password(userpassword);
-
-
     }
-
 }
